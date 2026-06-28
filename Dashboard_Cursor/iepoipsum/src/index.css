@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --color-orange: #ff6b35;
+  --color-orange-hover: #e85520;
+  --color-orange-soft: #fff0ea;
+  --color-cream: #fff8f0;
+  --color-cream-warm: #fff3e8;
+  --color-ink: #1c1c1e;
+  --color-ink-secondary: #3a3a3c;
+  --color-ink-muted: #8e8e93;
+  --color-gold: #d97706;
+  --color-success: #16a34a;
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+  }
+
+  html.dark body {
+    background-color: #111113;
+    color: #f5f5f7;
+  }
+}
+
+@layer utilities {
+  .page-bg {
+    background-color: #fff8f0;
+  }
+
+  html.dark .page-bg {
+    background-color: #111113;
+  }
+
+  .card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgb(28 28 30 / 0.04), 0 8px 24px rgb(28 28 30 / 0.06);
+  }
+
+  html.dark .card {
+    background: #1c1c1e;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.2), 0 8px 24px rgb(0 0 0 / 0.3);
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, #fff0ea 0%, #fff8f0 45%, #ffe8dc 100%);
+  }
+
+  html.dark .hero-gradient {
+    background: linear-gradient(135deg, #2a1810 0%, #1c1c1e 50%, #2a1510 100%);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .food-card-hover {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .food-card-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgb(255 107 53 / 0.15);
+  }
+
+  @keyframes pin-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .pin-bounce {
+    animation: pin-bounce 2s ease-in-out infinite;
+  }
+}
