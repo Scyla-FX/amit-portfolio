@@ -76,8 +76,8 @@ export const appProjects: AppProject[] = [
     tagline: 'Lifestyle & Content App',
     description:
       'Designed end-to-end product experience for a lifestyle content platform — including onboarding flow, home feed architecture, and content discovery patterns optimized for engagement and retention.',
-    thumbnail: '/images/apps/haruki.png',
-    screenImage: '/images/apps/haruki.png',
+    thumbnail: '/images/apps/app-thumbnail.jpg',
+    screenImage: '/images/apps/app-thumbnail.jpg',
   },
   {
     slug: 'finance-app',
@@ -85,8 +85,8 @@ export const appProjects: AppProject[] = [
     tagline: 'Fintech Mobile App',
     description:
       'Led product design for a fintech savings and banking application — designing secure onboarding, transaction flows, and dashboard UI with a focus on trust, clarity, and conversion.',
-    thumbnail: '/images/apps/jewel-bank.png',
-    screenImage: '/images/apps/jewel-bank.png',
+    thumbnail: '/images/apps/app-thumbnail.jpg',
+    screenImage: '/images/apps/app-thumbnail.jpg',
   },
   {
     slug: 'food-ninja-app',
@@ -94,8 +94,8 @@ export const appProjects: AppProject[] = [
     tagline: 'Food Delivery App',
     description:
       'Designed complete user journey for a food delivery mobile product — restaurant discovery, menu browsing, cart, and checkout flows — reducing ordering friction and improving task completion rate.',
-    thumbnail: '/images/apps/food-ninja.png',
-    screenImage: '/images/apps/food-ninja.png',
+    thumbnail: '/images/apps/app-thumbnail.jpg',
+    screenImage: '/images/apps/app-thumbnail.jpg',
   },
   {
     slug: 'social-media-app',
@@ -103,8 +103,8 @@ export const appProjects: AppProject[] = [
     tagline: 'Social Networking App',
     description:
       'Designed social networking mobile product with a focus on connection flows, real-time interaction patterns, and onboarding experiences that drive user activation and retention.',
-    thumbnail: '/images/apps/social-connect.png',
-    screenImage: '/images/apps/social-connect.png',
+    thumbnail: '/images/apps/app-thumbnail.jpg',
+    screenImage: '/images/apps/app-thumbnail.jpg',
   },
   {
     slug: 'notes-app',
@@ -112,8 +112,8 @@ export const appProjects: AppProject[] = [
     tagline: 'Productivity Tool',
     description:
       'Designed a minimalist productivity mobile application featuring clean note creation flows, organizational architecture, and gesture-based interactions for power users.',
-    thumbnail: '/images/apps/note-app.png',
-    screenImage: '/images/apps/note-app.png',
+    thumbnail: '/images/apps/app-thumbnail.jpg',
+    screenImage: '/images/apps/app-thumbnail.jpg',
   },
   {
     slug: 'food-app',
@@ -121,8 +121,8 @@ export const appProjects: AppProject[] = [
     tagline: 'Cooking Guide App',
     description:
       'Designed an immersive step-by-step cooking guide application — including recipe discovery, in-session cooking mode, and progress-tracking interactions optimized for one-handed use.',
-    thumbnail: '/images/apps/cooking-experience.png',
-    screenImage: '/images/apps/cooking-experience.png',
+    thumbnail: '/images/apps/app-thumbnail.jpg',
+    screenImage: '/images/apps/app-thumbnail.jpg',
   },
   {
     slug: 'quiz-app',
@@ -130,8 +130,8 @@ export const appProjects: AppProject[] = [
     tagline: 'Gamified Learning App',
     description:
       'Designed a gamified quiz and learning mobile product — including question flow UX, progress indicators, reward systems, and leaderboard interactions to drive engagement and retention.',
-    thumbnail: '/images/apps/quiz.png',
-    screenImage: '/images/apps/quiz.png',
+    thumbnail: '/images/apps/app-thumbnail.jpg',
+    screenImage: '/images/apps/app-thumbnail.jpg',
   },
   {
     slug: 'real-estate-app',
@@ -139,8 +139,8 @@ export const appProjects: AppProject[] = [
     tagline: 'Real Estate App',
     description:
       'Designed end-to-end property discovery mobile experience — including search filters, listing detail views, virtual tour integration touchpoints, and lead capture flows optimized for conversion.',
-    thumbnail: '/images/apps/dream-home.png',
-    screenImage: '/images/apps/dream-home.png',
+    thumbnail: '/images/apps/app-thumbnail.jpg',
+    screenImage: '/images/apps/app-thumbnail.jpg',
   },
 ];
 

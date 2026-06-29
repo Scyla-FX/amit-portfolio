@@ -2869,14 +2869,6 @@ html.dark {
 
   /* Reverting to 2 columns for web */
 
-  .category-page--premium[data-category="mobile"] .work-proof-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .category-page--premium[data-category="mobile"] .work-proof-card__media {
-    aspect-ratio: 9 / 19;
-  }
-
   .work-proof-card {
     display: block;
     overflow: hidden;

@@ -203,7 +203,7 @@ const appConfig: CategoryPageConfig = {
   descriptor: 'iOS and Android product design grounded in research, platform conventions, and accessibility.',
   categoryTags: ['Product Design', 'Mobile', 'iOS + Android'],
   routePrefix: '/app',
-  layout: 'portrait',
+  layout: 'landscape',
   stats: [
     { value: '8', label: 'Mobile Apps Designed' },
     { value: 'iOS + Android', label: 'Platform Coverage' },

@@ -5,7 +5,7 @@ export const mobilePageContent: PremiumPageContent = {
   slug: 'app',
   dataCategory: 'mobile',
   routePrefix: '/app',
-  layout: 'portrait',
+  layout: 'landscape',
   altCategoryLabel: 'Mobile Product Design',
   pageTitle: 'Mobile Product Design',
   titleWatermark: 'mobile product',
