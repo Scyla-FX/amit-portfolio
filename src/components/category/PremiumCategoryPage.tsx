@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, ZoomIn, ZoomOut } from 'lucide-react';
 import { appProjects } from '../../data/appCategory';
 import { erpProjects } from '../../data/erpCategory';
 import { getAdjacentCategories } from '../../data/categoryPageConfig';
@@ -93,6 +96,14 @@ export function PremiumCategoryPage({ content }: PremiumCategoryPageProps) {
   const activeAnchor = usePageAnchorSpy(ANCHORS.map((item) => item.id));
   const galleryRef = useGalleryStagger<HTMLDivElement>();
   const { ref: philosophyRef, visible: philosophyVisible } = useInViewReveal<HTMLDivElement>(0.75);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  useEffect(() => {
+    if (!selectedImage) {
+      setIsZoomed(false);
+    }
+  }, [selectedImage]);
 
   const workProjects = useMemo(() => {
     const projects = PROJECT_SOURCES[content.slug];
@@ -190,10 +201,11 @@ export function PremiumCategoryPage({ content }: PremiumCategoryPageProps) {
           <p className="premium-section__intro">{content.workIntro}</p>
           <div ref={galleryRef} className="work-proof-grid">
             {workProjects.map((project) => (
-              <Link
+              <button
                 key={project.slug}
-                to={`${content.routePrefix}/${project.slug}`}
-                className="work-proof-card gallery-card liquid-glass"
+                type="button"
+                onClick={() => setSelectedImage((project as any).screenImage || project.thumbnail)}
+                className="work-proof-card gallery-card liquid-glass text-left"
               >
                 <div className="work-proof-card__media gallery-card-media">
                   <span className="outcome-pill">{project.categoryTag}</span>
@@ -215,7 +227,7 @@ export function PremiumCategoryPage({ content }: PremiumCategoryPageProps) {
                     View Project <i className="ti ti-arrow-right" aria-hidden />
                   </span>
                 </div>
-              </Link>
+              </button>
             ))}
           </div>
         </section>
@@ -299,6 +311,61 @@ export function PremiumCategoryPage({ content }: PremiumCategoryPageProps) {
           </div>
         </section>
       </article>
+
+      {createPortal(
+        <AnimatePresence>
+          {selectedImage && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className={`fixed inset-0 z-[99999] flex ${
+                isZoomed ? 'items-start py-12' : 'items-center'
+              } justify-center bg-black/80 p-4 backdrop-blur-xl md:p-8 ${
+                isZoomed ? 'overflow-y-auto' : ''
+              }`}
+              onClick={() => setSelectedImage(null)}
+            >
+              <button
+                className="fixed right-6 top-6 z-[100000] rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+                onClick={() => setSelectedImage(null)}
+              >
+                <X size={24} />
+              </button>
+
+              <button
+                className="fixed right-20 top-6 z-[100000] rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsZoomed(!isZoomed);
+                }}
+                title={isZoomed ? "Zoom Out" : "Zoom In"}
+              >
+                {isZoomed ? <ZoomOut size={24} /> : <ZoomIn size={24} />}
+              </button>
+
+              <motion.img
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.95, opacity: 0 }}
+                transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+                src={selectedImage}
+                alt="Project Full View"
+                className={`relative z-[100000] ${
+                  isZoomed
+                    ? 'w-full max-w-5xl rounded-lg object-contain'
+                    : 'max-h-[95vh] max-w-[95vw] rounded-lg object-contain shadow-2xl'
+                } cursor-zoom-${isZoomed ? 'out' : 'in'}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsZoomed(!isZoomed);
+                }}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </PageShell>
   );
 }

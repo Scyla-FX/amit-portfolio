@@ -16,6 +16,7 @@ export interface CategoryProject {
   name: string;
   tagline: string;
   thumbnail: string;
+  screenImage?: string;
   outcomePill: string;
 }
 
@@ -135,6 +136,7 @@ const erpConfig: CategoryPageConfig = {
     name: project.name,
     tagline: project.tagline,
     thumbnail: project.thumbnail,
+    screenImage: project.screenImage,
     outcomePill: index % 2 === 0 ? 'B2B SaaS' : 'Enterprise',
   })),
 };

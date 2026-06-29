@@ -1,30 +1,31 @@
-import { webCategoryContent, type WebProject } from '../../data/webCategory';
-import { InnerPageHero } from '../layout/InnerPageHero';
-import { PageShell } from '../layout/PageShell';
+import { type WebProject } from '../../data/webCategory';
+import { motion } from 'framer-motion';
+import { X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface WebProjectPageLayoutProps {
   project: WebProject;
 }
 
 export function WebProjectPageLayout({ project }: WebProjectPageLayoutProps) {
-  const pageTitle = `${project.name} — ${project.tagline}`;
+  const navigate = useNavigate();
 
   return (
-    <PageShell
-      nav={{
-        backTo: '/#work',
-        title: project.name,
-        closeTo: '/category/web-design',
-      }}
-    >
-      <div className="section-container section-block">
-        <InnerPageHero watermark={webCategoryContent.titleWatermark} title={pageTitle} />
-
-        <div className="surface-definition mx-auto mt-10 max-w-3xl rounded-xl p-8 text-center">
-          <p className="section-eyebrow mb-2 uppercase tracking-widest">Web Design</p>
-          <p className="mt-4 text-base leading-relaxed text-theme-body md:text-lg">{project.description}</p>
-        </div>
-      </div>
-    </PageShell>
+    <div className="fixed inset-0 z-[100] bg-theme-base flex items-center justify-center p-4">
+      <button
+        className="absolute right-6 top-6 z-[110] rounded-full bg-black/10 dark:bg-white/10 p-2 text-theme-text transition-colors hover:bg-black/20 dark:hover:bg-white/20"
+        onClick={() => navigate(-1)}
+      >
+        <X size={24} />
+      </button>
+      <motion.img
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        src={project.screenImage}
+        alt={project.name}
+        className="max-h-[95vh] max-w-[95vw] rounded-xl object-contain shadow-2xl"
+      />
+    </div>
   );
 }

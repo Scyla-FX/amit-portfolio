@@ -65,45 +65,45 @@ export const enterprisePageContent: PremiumPageContent = {
   workHighlights: [
     {
       slug: 'erp-04',
-      categoryTag: 'CRM · Dashboard',
+      categoryTag: 'Fintech Dashboard',
       summary:
-        'Designed lead tracking, task management, and deal workflow visibility for a multi-role sales environment.',
-      focus: 'Dashboard UX, workflow clarity, action states, information hierarchy',
+        'Designed a high-fidelity personal finance and wealth management dashboard with transaction analytics.',
+      focus: 'Multi-card balances, spending analytics charts, quick-transfer workflows',
     },
     {
       slug: 'erp-02',
-      categoryTag: 'Internal Tools',
+      categoryTag: 'Fleet · Operations',
       summary:
-        'Built channel-based messaging, presence, and notification flows for enterprise team collaboration.',
-      focus: 'Operational workflows, async collaboration, role-aware messaging UX',
+        'Designed a real-time vehicle fleet tracking and operations dashboard with interactive live maps and vehicle telemetry.',
+      focus: 'Live map tracking, vehicle telemetry, fleet scheduling, billing analytics',
     },
     {
       slug: 'erp-03',
-      categoryTag: 'Operations Platform',
+      categoryTag: 'LMS Portal',
       summary:
-        'Designed catalog, inventory, and order processing flows for a data-heavy commerce operations stack.',
-      focus: 'Multi-step workflows, admin dashboards, inventory visibility',
+        'Designed a dark-mode enterprise learning management system (LMS) and video instruction portal.',
+      focus: 'Course progress tracking, video playback modules, sidebar assignments',
     },
     {
       slug: 'erp-01',
-      categoryTag: 'Enterprise Dashboard',
+      categoryTag: 'Staff Scheduling',
       summary:
-        'Created a multi-panel analytics and content management surface for high-volume operational teams.',
-      focus: 'Data visualization, dense layouts, power-user information architecture',
+        'Designed a real-time workforce operations and shift scheduling dashboard for hospitality and service teams.',
+      focus: 'Drag-and-drop planning, role-based resource allocation, leave/absence management',
     },
     {
       slug: 'erp-06',
-      categoryTag: 'Media Operations',
+      categoryTag: 'Media & Streaming',
       summary:
-        'Designed scheduling, publishing, and performance analytics for content operations at scale.',
-      focus: 'Reporting dashboards, publishing workflows, media library UX',
+        'Designed a dark-mode music streaming and artist analytics dashboard.',
+      focus: 'Music player UX, release scheduling, listener statistics, content management',
     },
     {
       slug: 'erp-05',
-      categoryTag: 'Retail Operations',
+      categoryTag: 'Property · Operations',
       summary:
-        'Shaped product discovery, catalog management, and order tracking for retail operator workflows.',
-      focus: 'Catalog UX, filtering systems, operator-facing admin tools',
+        'Designed an enterprise property management and sales dashboard tracking sales, maintenance, and revenue.',
+      focus: 'Property metrics, sales tracking, maintenance requests, transaction logs',
     },
   ],
   approachTitle: 'How I design enterprise systems',

@@ -67,43 +67,57 @@ export const websitePageContent: PremiumPageContent = {
       slug: 'web-02',
       categoryTag: 'FinTech SaaS',
       summary:
-        'Designed a high-converting B2B SaaS marketing site with feature storytelling and lead-generation flows.',
+        'Designed Nicktio, an online payment platform featuring intuitive account creation and business payment flows.',
       focus: 'Conversion UX, value communication, hero-to-demo journey',
     },
     {
       slug: 'web-06',
       categoryTag: 'B2B Marketing',
       summary:
-        'Built pricing, case study, and demo request flows aligned to enterprise buyer decision journeys.',
-      focus: 'Information architecture, trust signals, CTA hierarchy',
+        'Designed Mabi, a B2B SaaS platform for app launching, with top partner integrations and clear feature communication.',
+      focus: 'App launch workflows, partner integrations, SaaS marketing',
     },
     {
       slug: 'web-09',
       categoryTag: 'E-Commerce',
       summary:
-        'Designed product discovery, category browsing, and checkout flows for a cycling retail brand.',
-      focus: 'Purchase funnel UX, PDP layout, conversion optimization',
+        'Designed Collers, a vibrant collectible sneakers e-commerce platform with dynamic product discovery and interactive features.',
+      focus: 'Product showcase, e-commerce UX, conversion optimization',
     },
     {
       slug: 'web-04',
-      categoryTag: 'EdTech',
+      categoryTag: 'B2B SaaS',
       summary:
-        'Shaped course discovery, instructor profiles, and learner onboarding for an education platform.',
-      focus: 'Onboarding flows, content hierarchy, enrollment conversion',
+        'Designed TechVantage Solutions, a modern SaaS platform with productivity dashboards and workflow collaboration tools.',
+      focus: 'Workflow management, dashboard UX, collaborative features',
     },
     {
       slug: 'web-07',
       categoryTag: 'Healthcare',
       summary:
-        'Designed doctor discovery, appointment booking, and trust-building flows for a patient-facing platform.',
-      focus: 'Accessibility, clarity, service information architecture',
+        'Designed MedicalRecov, a professional healthcare platform for care discovery, emergency information, and online appointments.',
+      focus: 'Accessibility, trust signals, patient care flows',
     },
     {
       slug: 'web-01',
-      categoryTag: 'Travel',
+      categoryTag: 'Scheduling App',
       summary:
-        'Created destination browsing and trip planning interfaces with visual storytelling and booking flows.',
-      focus: 'Content hierarchy, immersive layout, conversion paths',
+        'Designed Acuity, a flexible scheduling software platform featuring seamless appointment booking and client management.',
+      focus: 'Booking flows, calendar UX, accessibility',
+    },
+    {
+      slug: 'web-03',
+      categoryTag: 'Food Discovery',
+      summary:
+        'Designed Mangan, an immersive culinary platform featuring rich visuals, authentic recipe showcases, and menu browsing.',
+      focus: 'Visual appeal, culinary storytelling, ordering UX',
+    },
+    {
+      slug: 'web-05',
+      categoryTag: 'Creative Portfolio',
+      summary:
+        'Designed Xinder, a platform for searching and discovering the work of artists with immersive dark-mode visual hierarchy.',
+      focus: 'Art discovery, dark mode UX, visual storytelling',
     },
   ],
   approachTitle: 'How I design web products',

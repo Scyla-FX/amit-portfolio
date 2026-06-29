@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, ZoomIn, ZoomOut } from 'lucide-react';
 import type { CategoryPageConfig, MainCategorySlug } from '../../data/categoryPageConfig';
 import { getAdjacentCategories } from '../../data/categoryPageConfig';
 import { homePage } from '../../data/homePage';
@@ -146,12 +149,14 @@ function MethodologyAccordion({
 function GalleryCard({
   project,
   config,
+  onClick,
 }: {
   project: CategoryPageConfig['projects'][0];
   config: CategoryPageConfig;
+  onClick: () => void;
 }) {
   return (
-    <Link to={`${config.routePrefix}/${project.slug}`} className="gallery-card">
+    <button onClick={onClick} type="button" className="gallery-card text-left block w-full">
       <div className="gallery-card-media">
         <span className="outcome-pill">{project.outcomePill}</span>
         <img
@@ -169,7 +174,7 @@ function GalleryCard({
           View Project <i className="ti ti-arrow-right" aria-hidden />
         </span>
       </div>
-    </Link>
+    </button>
   );
 }
 
@@ -178,6 +183,14 @@ export function CategoryPageTemplate({ config }: CategoryPageTemplateProps) {
   const activeAnchor = usePageAnchorSpy(ANCHORS.map((item) => item.id));
   const galleryRef = useGalleryStagger<HTMLDivElement>();
   const { ref: quoteRef, visible: quoteVisible } = useInViewReveal<HTMLQuoteElement>(0.8);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  useEffect(() => {
+    if (!selectedImage) {
+      setIsZoomed(false);
+    }
+  }, [selectedImage]);
 
   useReadingProgress();
   useCategoryMeta(config);
@@ -273,7 +286,12 @@ export function CategoryPageTemplate({ config }: CategoryPageTemplateProps) {
           <h2 className="gallery-heading">Full Project Gallery</h2>
           <div ref={galleryRef} className={`gallery-grid gallery-grid--${config.slug}`}>
             {config.projects.map((project) => (
-              <GalleryCard key={project.slug} project={project} config={config} />
+              <GalleryCard 
+                key={project.slug} 
+                project={project} 
+                config={config} 
+                onClick={() => setSelectedImage(project.screenImage || project.thumbnail)} 
+              />
             ))}
           </div>
         </section>
@@ -319,6 +337,61 @@ export function CategoryPageTemplate({ config }: CategoryPageTemplateProps) {
           </div>
         </section>
       </article>
+
+      {createPortal(
+        <AnimatePresence>
+          {selectedImage && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className={`fixed inset-0 z-[99999] flex ${
+                isZoomed ? 'items-start py-12' : 'items-center'
+              } justify-center bg-black/80 p-4 backdrop-blur-xl md:p-8 ${
+                isZoomed ? 'overflow-y-auto' : ''
+              }`}
+              onClick={() => setSelectedImage(null)}
+            >
+              <button
+                className="fixed right-6 top-6 z-[100000] rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+                onClick={() => setSelectedImage(null)}
+              >
+                <X size={24} />
+              </button>
+
+              <button
+                className="fixed right-20 top-6 z-[100000] rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsZoomed(!isZoomed);
+                }}
+                title={isZoomed ? "Zoom Out" : "Zoom In"}
+              >
+                {isZoomed ? <ZoomOut size={24} /> : <ZoomIn size={24} />}
+              </button>
+
+              <motion.img
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.95, opacity: 0 }}
+                transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+                src={selectedImage}
+                alt="Project Full View"
+                className={`relative z-[100000] ${
+                  isZoomed
+                    ? 'w-full max-w-5xl rounded-lg object-contain'
+                    : 'max-h-[95vh] max-w-[95vw] rounded-lg object-contain shadow-2xl'
+                } cursor-zoom-${isZoomed ? 'out' : 'in'}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsZoomed(!isZoomed);
+                }}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </PageShell>
   );
 }
