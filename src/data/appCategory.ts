@@ -71,13 +71,22 @@ export const appCategoryContent = {
 
 export const appProjects: AppProject[] = [
   {
-    slug: 'fashion-app',
-    name: 'Haruki',
-    tagline: 'Lifestyle & Content App',
+    slug: 'fitness-app',
+    name: 'Fitness Journey',
+    tagline: 'Fitness Tracking App',
     description:
-      'Designed end-to-end product experience for a lifestyle content platform — including onboarding flow, home feed architecture, and content discovery patterns optimized for engagement and retention.',
-    thumbnail: '/images/apps/app-thumbnail.jpg',
-    screenImage: '/images/apps/app-thumbnail.jpg',
+      'Designed a comprehensive fitness tracking application focusing on personalized workout journeys, hydration monitoring, and progress visualization with an immersive dark-mode UI.',
+    thumbnail: '/images/apps/fitness-app.jpg',
+    screenImage: '/images/apps/fitness-app.jpg',
+  },
+  {
+    slug: 'travel-app',
+    name: 'Alpay Travel',
+    tagline: 'Travel Booking App',
+    description:
+      'Designed a seamless travel discovery and booking platform featuring intuitive date selection, destination preview cards, and streamlined search architecture for modern travelers.',
+    thumbnail: '/images/apps/travel-app.jpg',
+    screenImage: '/images/apps/travel-app.jpg',
   },
   {
     slug: 'finance-app',
@@ -85,62 +94,53 @@ export const appProjects: AppProject[] = [
     tagline: 'Fintech Mobile App',
     description:
       'Led product design for a fintech savings and banking application — designing secure onboarding, transaction flows, and dashboard UI with a focus on trust, clarity, and conversion.',
-    thumbnail: '/images/apps/app-thumbnail.jpg',
-    screenImage: '/images/apps/app-thumbnail.jpg',
+    thumbnail: '/images/apps/finance-app.jpg',
+    screenImage: '/images/apps/finance-app.jpg',
   },
   {
-    slug: 'food-ninja-app',
-    name: 'FoodNinja',
-    tagline: 'Food Delivery App',
+    slug: 'diet-app',
+    name: 'Diet Journey',
+    tagline: 'Diet & Calorie Tracker',
     description:
-      'Designed complete user journey for a food delivery mobile product — restaurant discovery, menu browsing, cart, and checkout flows — reducing ordering friction and improving task completion rate.',
-    thumbnail: '/images/apps/app-thumbnail.jpg',
-    screenImage: '/images/apps/app-thumbnail.jpg',
+      'Designed an engaging diet and calorie tracking mobile product with macronutrient breakdown, daily calorie charts, and clear progress indicators to motivate users on their health journey.',
+    thumbnail: '/images/apps/diet-app.jpg',
+    screenImage: '/images/apps/diet-app.jpg',
   },
   {
-    slug: 'social-media-app',
-    name: 'Social Connect',
-    tagline: 'Social Networking App',
+    slug: 'social-app',
+    name: 'Connect',
+    tagline: 'Social Discovery App',
     description:
-      'Designed social networking mobile product with a focus on connection flows, real-time interaction patterns, and onboarding experiences that drive user activation and retention.',
-    thumbnail: '/images/apps/app-thumbnail.jpg',
-    screenImage: '/images/apps/app-thumbnail.jpg',
+      'Designed a proximity-based social networking application featuring intuitive connection flows, interactive map UI, and seamless onboarding to help users meet new people around them.',
+    thumbnail: '/images/apps/social-app.jpg',
+    screenImage: '/images/apps/social-app.jpg',
   },
   {
-    slug: 'notes-app',
-    name: 'Note App',
-    tagline: 'Productivity Tool',
+    slug: 'journal-app',
+    name: 'Lumen',
+    tagline: 'AI Journaling App',
     description:
-      'Designed a minimalist productivity mobile application featuring clean note creation flows, organizational architecture, and gesture-based interactions for power users.',
-    thumbnail: '/images/apps/app-thumbnail.jpg',
-    screenImage: '/images/apps/app-thumbnail.jpg',
-  },
-  {
-    slug: 'food-app',
-    name: 'Cooking Experience',
-    tagline: 'Cooking Guide App',
-    description:
-      'Designed an immersive step-by-step cooking guide application — including recipe discovery, in-session cooking mode, and progress-tracking interactions optimized for one-handed use.',
-    thumbnail: '/images/apps/app-thumbnail.jpg',
-    screenImage: '/images/apps/app-thumbnail.jpg',
+      'Designed a minimalist, distraction-free writing environment for self-reflection. Features include an AI companion interface, calming typography, and smooth authentication flows.',
+    thumbnail: '/images/apps/journal-app.jpg',
+    screenImage: '/images/apps/journal-app.jpg',
   },
   {
     slug: 'quiz-app',
-    name: 'Quiz',
-    tagline: 'Gamified Learning App',
+    name: 'Trivia Master',
+    tagline: 'Gamified Quiz App',
     description:
-      'Designed a gamified quiz and learning mobile product — including question flow UX, progress indicators, reward systems, and leaderboard interactions to drive engagement and retention.',
-    thumbnail: '/images/apps/app-thumbnail.jpg',
-    screenImage: '/images/apps/app-thumbnail.jpg',
+      'Designed an engaging educational application with vibrant UI, progress indicators, interactive quiz categories, and competitive leaderboards to sustain learning engagement.',
+    thumbnail: '/images/apps/quiz-app.jpg',
+    screenImage: '/images/apps/quiz-app.jpg',
   },
   {
-    slug: 'real-estate-app',
-    name: 'Dream Home',
-    tagline: 'Real Estate App',
+    slug: 'memory-app',
+    name: 'Time Vault',
+    tagline: 'Memory Capsule App',
     description:
-      'Designed end-to-end property discovery mobile experience — including search filters, listing detail views, virtual tour integration touchpoints, and lead capture flows optimized for conversion.',
-    thumbnail: '/images/apps/app-thumbnail.jpg',
-    screenImage: '/images/apps/app-thumbnail.jpg',
+      'Designed a nostalgic and elegant application for sending messages to the future. Focuses on premium visual aesthetics, countdown timers, and emotional user interactions.',
+    thumbnail: '/images/apps/memory-app.jpg',
+    screenImage: '/images/apps/memory-app.jpg',
   },
 ];
 

@@ -64,6 +64,20 @@ export const mobilePageContent: PremiumPageContent = {
     'A selection of iOS and Android apps across fintech, food, lifestyle, productivity, and learning — designed for clarity, engagement, and platform-native usability.',
   workHighlights: [
     {
+      slug: 'fitness-app',
+      categoryTag: 'Health & Fitness',
+      summary:
+        'Designed a comprehensive fitness tracking application focusing on personalized workout journeys and progress visualization.',
+      focus: 'Dark mode UI, data visualization, motivational UX',
+    },
+    {
+      slug: 'travel-app',
+      categoryTag: 'Travel & Booking',
+      summary:
+        'Designed a seamless travel discovery and booking platform featuring intuitive date selection and destination previews.',
+      focus: 'Search architecture, booking flows, visual discovery',
+    },
+    {
       slug: 'finance-app',
       categoryTag: 'FinTech · iOS',
       summary:
@@ -71,39 +85,39 @@ export const mobilePageContent: PremiumPageContent = {
       focus: 'Onboarding UX, financial clarity, conversion and trust signals',
     },
     {
-      slug: 'food-ninja-app',
-      categoryTag: 'Food Delivery',
+      slug: 'diet-app',
+      categoryTag: 'Health & Diet',
       summary:
-        'Designed restaurant discovery, cart, and checkout flows that reduce ordering friction on mobile.',
-      focus: 'Core user flows, task completion, one-handed usability',
+        'Designed an engaging diet and calorie tracking mobile product with macronutrient breakdown and daily charts.',
+      focus: 'Gamification, progress tracking, accessible data visualization',
     },
     {
-      slug: 'social-media-app',
-      categoryTag: 'Social · Cross-platform',
+      slug: 'social-app',
+      categoryTag: 'Social Discovery',
       summary:
-        'Built connection flows, feed interactions, and onboarding patterns that drive activation and retention.',
-      focus: 'Engagement loops, real-time UX, social interaction patterns',
+        'Designed a proximity-based social networking application featuring intuitive connection flows and interactive map UI.',
+      focus: 'Onboarding flows, map interactions, real-time social features',
     },
     {
-      slug: 'real-estate-app',
-      categoryTag: 'PropTech',
+      slug: 'journal-app',
+      categoryTag: 'Productivity · AI',
       summary:
-        'Shaped property search, listing detail, and lead capture flows for a real estate discovery app.',
-      focus: 'Search filters, listing UX, conversion-focused detail screens',
-    },
-    {
-      slug: 'food-app',
-      categoryTag: 'Cooking · Lifestyle',
-      summary:
-        'Designed step-by-step cooking mode and recipe discovery optimized for one-handed, in-session use.',
-      focus: 'Interaction design, progress states, immersive session UX',
+        'Designed a minimalist, distraction-free writing environment for self-reflection with an AI companion interface.',
+      focus: 'Typography, authentication flows, minimalist UX',
     },
     {
       slug: 'quiz-app',
       categoryTag: 'EdTech · Gamified',
       summary:
-        'Created quiz flows, progress indicators, and reward patterns to sustain learning engagement.',
+        'Designed an engaging educational application with vibrant UI, interactive quiz categories, and leaderboards.',
       focus: 'Gamification UX, feedback systems, retention-oriented flows',
+    },
+    {
+      slug: 'memory-app',
+      categoryTag: 'Lifestyle · Nostalgia',
+      summary:
+        'Designed a nostalgic application for sending messages to the future with premium visual aesthetics and countdown timers.',
+      focus: 'Visual design, emotional UX, engagement',
     },
   ],
   approachTitle: 'How I design mobile products',
