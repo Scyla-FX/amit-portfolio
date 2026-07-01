@@ -96,7 +96,7 @@ export function PremiumCategoryPage({ content }: PremiumCategoryPageProps) {
   const activeAnchor = usePageAnchorSpy(ANCHORS.map((item) => item.id));
   const galleryRef = useGalleryStagger<HTMLDivElement>();
   const { ref: philosophyRef, visible: philosophyVisible } = useInViewReveal<HTMLDivElement>(0.75);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string | string[] | null>(null);
   const [isZoomed, setIsZoomed] = useState(false);
 
   useEffect(() => {
@@ -204,7 +204,7 @@ export function PremiumCategoryPage({ content }: PremiumCategoryPageProps) {
               <button
                 key={project.slug}
                 type="button"
-                onClick={() => setSelectedImage((project as any).screenImage || project.thumbnail)}
+                onClick={() => setSelectedImage((project as any).gallery || (project as any).screenImage || project.thumbnail)}
                 className="work-proof-card gallery-card liquid-glass text-left"
               >
                 <div className="work-proof-card__media gallery-card-media">
@@ -344,23 +344,36 @@ export function PremiumCategoryPage({ content }: PremiumCategoryPageProps) {
                 {isZoomed ? <ZoomOut size={24} /> : <ZoomIn size={24} />}
               </button>
 
-              <motion.img
-                initial={{ scale: 0.95, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.95, opacity: 0 }}
-                transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-                src={selectedImage}
-                alt="Project Full View"
-                className={`relative z-[100000] ${
-                  isZoomed
-                    ? 'w-full max-w-5xl rounded-lg object-contain'
-                    : 'max-h-[95vh] max-w-[95vw] rounded-lg object-contain shadow-2xl'
-                } cursor-zoom-${isZoomed ? 'out' : 'in'}`}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIsZoomed(!isZoomed);
-                }}
-              />
+              <div 
+                className={`relative z-[100000] flex ${
+                  isZoomed 
+                    ? 'flex-col gap-12 w-full max-w-5xl items-center' 
+                    : `flex-row gap-8 max-h-[95vh] w-full overflow-x-auto snap-x snap-mandatory hide-scrollbar ${Array.isArray(selectedImage) && selectedImage.length > 1 ? 'items-center px-8 md:px-[15vw]' : 'items-center justify-center'}`
+                }`}
+                style={!isZoomed && Array.isArray(selectedImage) && selectedImage.length > 1 ? { justifyContent: 'flex-start' } : {}}
+                onClick={(e) => e.stopPropagation()}
+              >
+                {(Array.isArray(selectedImage) ? selectedImage : [selectedImage]).map((img, index) => (
+                  <motion.img
+                    key={img}
+                    initial={{ scale: 0.95, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0.95, opacity: 0 }}
+                    transition={{ type: 'spring', damping: 25, stiffness: 300, delay: Math.min(index * 0.05, 0.5) }}
+                    src={img}
+                    alt="Project Full View"
+                    className={`${
+                      isZoomed
+                        ? 'w-full rounded-lg object-contain shadow-2xl'
+                        : 'max-h-[85vh] w-auto rounded-lg object-contain shadow-2xl snap-center shrink-0'
+                    } cursor-zoom-${isZoomed ? 'out' : 'in'} ${Array.isArray(selectedImage) && selectedImage.length > 1 && !isZoomed ? 'first:ml-4 last:mr-4' : ''}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setIsZoomed(!isZoomed);
+                    }}
+                  />
+                ))}
+              </div>
             </motion.div>
           )}
         </AnimatePresence>,

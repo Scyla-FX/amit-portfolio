@@ -5,6 +5,7 @@ export interface AppProject {
   description: string;
   thumbnail: string;
   screenImage: string;
+  gallery?: string[];
 }
 
 export const appCategoryContent = {
@@ -78,15 +79,38 @@ export const appProjects: AppProject[] = [
       'Designed a comprehensive fitness tracking application focusing on personalized workout journeys, hydration monitoring, and progress visualization with an immersive dark-mode UI.',
     thumbnail: '/images/apps/fitness-app.jpg',
     screenImage: '/images/apps/fitness-app.jpg',
+    gallery: [
+      '/images/apps/fitness-journey/seq-1.png',
+      '/images/apps/fitness-journey/seq-2.png',
+      '/images/apps/fitness-journey/seq-3.png',
+      '/images/apps/fitness-journey/seq-4.png',
+      '/images/apps/fitness-journey/seq-5.png',
+      '/images/apps/fitness-journey/seq-6.png',
+      '/images/apps/fitness-journey/seq-7.png',
+      '/images/apps/fitness-journey/seq-8.png',
+      '/images/apps/fitness-journey/seq-9.png',
+      '/images/apps/fitness-journey/seq-10.png',
+    ],
   },
   {
     slug: 'travel-app',
-    name: 'Alpay Travel',
+    name: 'Vibrant Odyssey',
     tagline: 'Travel Booking App',
     description:
       'Designed a seamless travel discovery and booking platform featuring intuitive date selection, destination preview cards, and streamlined search architecture for modern travelers.',
     thumbnail: '/images/apps/travel-app.jpg',
     screenImage: '/images/apps/travel-app.jpg',
+    gallery: [
+      '/images/apps/travel-app/new-seq-1.png',
+      '/images/apps/travel-app/new-seq-2.png',
+      '/images/apps/travel-app/new-seq-3.png',
+      '/images/apps/travel-app/new-seq-4.png',
+      '/images/apps/travel-app/new-seq-5.png',
+      '/images/apps/travel-app/new-seq-6.png',
+      '/images/apps/travel-app/new-seq-7.png',
+      '/images/apps/travel-app/new-seq-8.png',
+      '/images/apps/travel-app/new-seq-9.png',
+    ],
   },
   {
     slug: 'finance-app',
@@ -96,6 +120,18 @@ export const appProjects: AppProject[] = [
       'Led product design for a fintech savings and banking application — designing secure onboarding, transaction flows, and dashboard UI with a focus on trust, clarity, and conversion.',
     thumbnail: '/images/apps/finance-app.jpg',
     screenImage: '/images/apps/finance-app.jpg',
+    gallery: [
+      '/images/apps/finance-app/seq-1.png',
+      '/images/apps/finance-app/seq-2.png',
+      '/images/apps/finance-app/seq-3.png',
+      '/images/apps/finance-app/seq-4.png',
+      '/images/apps/finance-app/seq-5.png',
+      '/images/apps/finance-app/seq-6.png',
+      '/images/apps/finance-app/seq-7.png',
+      '/images/apps/finance-app/seq-8.png',
+      '/images/apps/finance-app/seq-9.png',
+      '/images/apps/finance-app/seq-10.png',
+    ],
   },
   {
     slug: 'diet-app',
